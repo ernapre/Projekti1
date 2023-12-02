@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjeneza e muzikes rock</title>
+
+    <link rel="stylesheet" href="Projekti.css">
+
+</head>
+<body>
+
+    <video id="video-background" autoplay muted loop>
+        <source src="MuzikaRock_2.mp4" type="video/mp4">
+    </video>
+
+    <div id="content">
+
+        <button>
+            <img src="Btn.png" alt="Menu Button">
+        </button>
+    </div>
+
+    
+    <div id="music-button">
+        <button class="music-button">
+         <img src="play.jpg" id="icon">
+        </button>
+    </div>
+
+<audio id="mySong">
+    <source src="Era.mp3" type="audio/mp3">
+</audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+        icon.onclick = function(){
+            if(mySong.paused){
+            mySong.play();
+            
+         icon.src="play.jpg";
+            }else{
+                mySong.pause();
+                icon.src="play.jpg";
+            }
+        }
+    </script>
+</body>
+</html>
