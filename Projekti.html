@@ -4,47 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gjeneza e muzikes rock</title>
-
     <link rel="stylesheet" href="Projekti.css">
-
 </head>
 <body>
-
     <video id="video-background" autoplay muted loop>
         <source src="MuzikaRock_2.mp4" type="video/mp4">
     </video>
 
     <div id="content">
-
         <button>
             <img src="Btn.png" alt="Menu Button">
         </button>
     </div>
 
     
+
     <div id="music-button">
+        <p class="song-name">Era - Gjurmet</p>
         <button class="music-button">
-         <img src="play.jpg" id="icon">
+            <img src="play.jpg" id="icon">
         </button>
+        <div class="volume-slider">
+            <input type="range" id="volume" min="0" max="100" value="50">
+            <div>
+                <label class="switch">
+                    <input type="checkbox" id="videoToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+           
+        </div>
     </div>
 
-<audio id="mySong">
-    <source src="Era.mp3" type="audio/mp3">
-</audio>
+    <audio id="mySong">
+        <source src="Era.mp3" type="audio/mp3">
+    </audio>
 
     <script>
         var mySong = document.getElementById("mySong");
         var icon = document.getElementById("icon");
+        var volumeSlider = document.getElementById("volume");
+        var videoToggle = document.getElementById("videoToggle");
+        var video = document.getElementById("video-background");
+
         icon.onclick = function(){
             if(mySong.paused){
-            mySong.play();
-            
-         icon.src="play.jpg";
-            }else{
+                mySong.play();
+                icon.src="pauza.png";
+            } else {
                 mySong.pause();
                 icon.src="play.jpg";
             }
         }
+
+        volumeSlider.addEventListener('input', function() {
+            mySong.volume = volumeSlider.value / 100;
+        });
+
+        videoToggle.addEventListener('change', function() {
+            if (videoToggle.checked) {
+              
+                video.play();
+            } else {
+                  video.pause();
+            }
+        });
     </script>
 </body>
 </html>
