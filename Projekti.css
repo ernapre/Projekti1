@@ -41,8 +41,8 @@ button {
 
 
 button img {
-    width: 40px;
-    height: 30px;
+    width: 30px;
+    height: 20px;
     margin-right: 5px; 
 
 }
@@ -58,13 +58,13 @@ button img {
 }
 
 #icon {
-    width: 50px;
-    height: 60px;
+    width: 40px;
+    height: 50px;
 }
 
 #icon[src="pauza.png"] {
-    width: 40px;
-    height: 36px;
+    width: 30px;
+    height: 26px;
     padding-right: 4%;
 }
 
@@ -93,11 +93,11 @@ button img {
 }
 
 .song-name{
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 100;
     position: absolute;
-    top: 84.5%;
-    left: 6%;
+    top: 84%;
+    left: 5.6%;
     color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -105,11 +105,11 @@ button img {
 
 .switch {
     position: absolute;
-    top: -55%;
+    top: -15%;
     left: 115%;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 40px;
+    height: 24px;
   }
   
 
@@ -135,8 +135,8 @@ button img {
   .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 16px;
+    width: 16px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -155,7 +155,7 @@ button img {
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    transform: translateX(16px);
   }
   
   .slider.round {
@@ -166,5 +166,54 @@ button img {
     border-radius: 50%;
   }
 
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: -500px; 
+    width: 500px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.988);
+    transition: right 1.5s ease;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
+  
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  
+  .menu-item {
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 1.5s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .menu-item:hover {
+    color: #7a7a7a; 
+  }
+  
+  .menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+    color: white;
+  }
+
+  .cls-button {
+    padding: 3%;
+    padding-right: 450px;
+  }
+
+ 
+  
 
 

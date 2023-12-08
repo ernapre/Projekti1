@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gjeneza e muzikes rock</title>
     <link rel="stylesheet" href="Projekti.css">
 </head>
+
 <body>
     <video id="video-background" autoplay muted loop>
         <source src="MuzikaRock_2.mp4" type="video/mp4">
     </video>
-
-    <div id="content">
-        <button>
-            <img src="Btn.png" alt="Menu Button">
-        </button>
-    </div>
-
-    
 
     <div id="music-button">
         <p class="song-name">Era - Gjurmet</p>
@@ -32,7 +26,6 @@
                     <span class="slider round"></span>
                 </label>
             </div>
-           
         </div>
     </div>
 
@@ -47,28 +40,58 @@
         var videoToggle = document.getElementById("videoToggle");
         var video = document.getElementById("video-background");
 
-        icon.onclick = function(){
-            if(mySong.paused){
+        icon.onclick = function () {
+            if (mySong.paused) {
                 mySong.play();
-                icon.src="pauza.png";
+                icon.src = "pauza.png";
             } else {
                 mySong.pause();
-                icon.src="play.jpg";
+                icon.src = "play.jpg";
             }
         }
 
-        volumeSlider.addEventListener('input', function() {
+        volumeSlider.addEventListener('input', function () {
             mySong.volume = volumeSlider.value / 100;
         });
 
-        videoToggle.addEventListener('change', function() {
+        videoToggle.addEventListener('change', function () {
             if (videoToggle.checked) {
-              
                 video.play();
             } else {
-                  video.pause();
+                video.pause();
             }
         });
     </script>
+
+    <div id="content">
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="Btn.png" alt="Menu Button">
+        </button>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-content">
+
+            <a href="#" class="menu-item">Home</a>
+            <a href="#" class="menu-item">Historiku</a>
+            <a href="#" class="menu-item">Galeria</a>
+            <a href="#" class="menu-item">Diskografia</a>
+            <a href="#" class="menu-item">Log In</a>
+
+            <div class="cls-button">
+            <a href="#" onclick="toggleMenu()" class="menu-item">X</a>
+        </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu-container');
+            menu.style.right = menu.style.right === '0px' ? '-500px' : '0px';
+        }
+    </script>
+
 </body>
+
 </html>
