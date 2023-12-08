@@ -131,3 +131,26 @@ button {
     padding-right: 450px;
   }
 
+video{
+  margin-top: 60px;
+  width: 800px;
+  margin-left: 400px;
+  margin-bottom: 60px;
+}
+
+textarea{
+  margin-left: 400px;
+  width: 1000px;
+  height: 450px;
+  overflow-y: scroll;
+  overflow-x: hidden ;
+  border: none;
+  direction: rtl;
+  background-color: black;
+  color: white; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  font-size: 20px;
+}
+
+
