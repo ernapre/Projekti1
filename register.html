@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="register-container">
+        <form onsubmit="return validateForm()">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Username" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+          <a href="login.html" class="log-in-link">Already have an account? Log in here!</a>
+        </form>
+    </div>
+    <form onsubmit="return validateForm()">
+    <div class="register-button-container">
+        <button type="submit" class="register-button">Register</button>
+    </div>
+    
+</form>
+</div>
+
+<div id="content">
+    <button id="menuButton" onclick="toggleMenu()">
+        <img src="Btn.png" alt="Menu Button">
+    </button>
+</div>
+
+<script>
+  function validateForm() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var email = document.getElementById('email').value;
+
+      var usernameRegex = /^[a-zA-Z0-9]{8,15}$/;
+      if (!usernameRegex.test(username)) {
+          alert('Username should be between 8-15 letters.');
+          return false;
+      }
+
+      var passwordRegex = /^[A-Z].*\d{3}$/;
+      if (!passwordRegex.test(password)) {
+          alert('Password requires an uppercase first letter and three numbers at the end.');
+          return false;
+      }
+
+      if (password !== confirmPassword) {
+          alert('Password and Confirm Password do not match.');
+          return false;
+      }
+
+      var emailRegex = /^\S+@\S+\.\S+$/;
+      if (!emailRegex.test(email)) {
+          alert('Invalid email address.');
+          return false;
+      }
+      return true;
+  }
+</script>
+
+<div class="menu-container">
+    <div class="menu-content">
+        <a href="Projekti.html" class="menu-item">Home</a>
+        <a href="Historiku.html" class="menu-item">Historiku</a>
+        <a href="#" class="menu-item">Galeria</a>
+        <a href="#" class="menu-item">Diskografia</a>
+        <a href="login.html" class="menu-item">Log In</a>
+        <div class="cls-button">
+            <a href="#" onclick="toggleMenu()" class="menu-item">X</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.menu-container');
+        menu.style.right = menu.style.right === '0px' ? '-500px' : '0px';
+    }
+</script>
+
+</body>
+</html>
