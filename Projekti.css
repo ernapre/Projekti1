@@ -172,7 +172,7 @@ button img {
     right: -500px; 
     width: 500px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.988);
+    background-color: rgba(0, 0, 0, 0.758);
     transition: right 1.5s ease;
     z-index: 1;
     overflow-x: hidden;
