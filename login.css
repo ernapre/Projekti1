@@ -57,6 +57,7 @@ body {
     width: 315px;
     font-size: 70px;
     transition: background-color 0.5s ease;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .login-button:hover{
@@ -123,7 +124,7 @@ body {
     color: white;
     font-size: 20px;
     transition: color 1.5s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .menu-item:hover {
@@ -153,15 +154,14 @@ body {
     border-radius: 30px;
     height: 40px;
     width: 320px;
-    background-color: #52d800;
     color: rgba(2, 56, 14, 0.549);
     text-align: center; 
     margin-top: 50px; 
     text-decoration: none;
     transition: background-color 0.5s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
   .register-link:hover{
-    background-color: #40a700;
+    color: #40a700;
   }

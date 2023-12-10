@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="Galeria.css">
+</head>
+<body>
+    <script>
+        var i = 0;
+        var imgArray = [
+            { src: "Lindja.png", hoverText: "Lindja" },
+            { src: "Gjurmet.png", hoverText: "Gjurmet" },
+            { src: "Minatori.jpg", hoverText: "Minatori" },
+            { src: "Mak.png", hoverText: "Mak" },
+            { src: "Tnt.png", hoverText: "Tnt" }
+        ];
+
+        function ndrroImg(direction) {
+            if (direction === 'prev') {
+                i = (i - 1 + imgArray.length) % imgArray.length;
+            } else {
+                i = (i + 1) % imgArray.length;
+            }
+            document.getElementById('slideshow').src = imgArray[i].src;
+            document.getElementById('image-overlay').innerText = imgArray[i].hoverText;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            ndrroImg(); 
+        });
+    </script>
+
+    <div id="kontenti">
+        <header>
+            <img name="mySlide" id="slideshow" />
+            <div id="image-overlay"></div>
+        </header>
+        <div class="navigation">
+            <button class="prev" onclick="ndrroImg('prev')">Previous</button>
+            <button class="next" onclick="ndrroImg('next')">Next</button>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="Btn.png" alt="Menu Button">
+        </button>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-content">
+
+            <a href="Projekti.html" class="menu-item">Home</a>
+            <a href="Historiku.html" class="menu-item">Historiku</a>
+            <a href="Galeria.html" class="menu-item">Galeria</a>
+            <a href="login.html" class="menu-item">Log In</a>
+
+            <div class="cls-button">
+            <a href="#" onclick="toggleMenu()" class="menu-item">X</a>
+        </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu-container');
+            menu.style.right = menu.style.right === '0px' ? '-500px' : '0px';
+        }
+    </script>
+
+
+</body>
+</html>

@@ -4,6 +4,7 @@ body {
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 .header {
@@ -14,7 +15,7 @@ body {
     height: 100%;
     background-color: #52D800;
     text-align: center;
-    padding: 20px; 
+    padding: 20px;
     box-sizing: border-box;
     z-index: 1;
 }
@@ -27,9 +28,9 @@ body {
     box-sizing: border-box;
 }
 
-.text{
-   margin-left: 400px;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.text {
+    margin-left: 400px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -40,11 +41,11 @@ h1 {
     font-weight: 400;
 }
 
-.fotot{
+.fotot {
     margin-top: -50px;
 }
 
-.foto{
+.foto {
     margin-top: 25px;
     width: 330px;
     height: 220px;
@@ -66,27 +67,25 @@ button {
     justify-content: flex-end;
     align-items: center;
     align-content: center;
-  }
-  
+}
+
 #content {
     position: relative;
     z-index: 1;
     color: black;
-    text-align: center;
-    padding: 50px;
-  }
+}
 
-  button img {
+button img {
     width: 30px;
     height: 20px;
-    margin-right: 5px; 
+    margin-right: 5px;
     cursor: pointer;
-  }
+}
 
 .menu-container {
     position: fixed;
     top: 0;
-    right: -500px; 
+    right: -500px;
     width: 500px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.758);
@@ -94,79 +93,79 @@ button {
     z-index: 1;
     overflow-x: hidden;
     padding-top: 60px;
-  }
-  
-  .menu-content {
+}
+
+.menu-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-  }
-  
-  .menu-item {
+}
+
+.menu-item {
     padding: 20px;
     text-decoration: none;
     color: white;
     font-size: 20px;
     transition: color 1.5s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .menu-item:hover {
-    color: #7a7a7a; 
-  }
-  
-  .menu-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 2;
-    color: white;
-  }
-  
-  .cls-button {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.menu-item:hover {
+    color: #7a7a7a;
+}
+
+.cls-button {
     padding: 3%;
     padding-right: 450px;
-  }
-
-video{
-  margin-top: 60px;
-  width: 800px;
-  margin-left: 440px;
 }
 
-.textbox{
-  padding-top: 50px;
+video {
+    margin-top: 60px;
+    width: 800px;
+    margin-left: 405px;
 }
 
-textarea{
-  margin-left: 440px;
-  width: 800px;
-  height: 450px;
-  overflow-y: scroll;
-  overflow-x: hidden ;
-  border: none;
-  direction: rtl;
-  background-color: black;
-  color: white; 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: left;
-  font-size: 20px;
-  resize: none;
+.textbox {
+    padding-top: 50px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-textarea::-webkit-scrollbar {
-  width: 6.5px; 
+.content-text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: none;
+    direction: rtl;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+    font-size: 20px;
+    resize: none;
 }
 
-textarea::-webkit-scrollbar-thumb {
-  background-color: #909090;
-  border-radius: 6px; 
+.content-text::-webkit-scrollbar {
+    width: 6.5px;
 }
 
-textarea::-webkit-scrollbar-track {
-  background-color: #2e2e2e; 
-  border-radius: 6px;
+.content-text::-webkit-scrollbar-thumb {
+    background-color: #909090;
+    border-radius: 6px;
 }
 
+.content-text::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+    border-radius: 6px;
+}
+
+.content-text {
+    padding: 10px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
