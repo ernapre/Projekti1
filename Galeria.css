@@ -159,3 +159,89 @@ img{
     padding: 3%;
     padding-right: 450px;
   }
+
+  footer{
+    background-color: #111111;
+    color: white; 
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    top: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+  }
+  .footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+  }
+  .socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+    margin-left: -40px;
+    margin-top: -10px;
+  }
+  .socials li{
+    margin: 0 10px;
+  }
+  .socials a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+  
+  }
+  .socials a:hover i{
+    color: rgb(0, 255, 13);
+  }
+  
+  .footer-bottom{
+    background: #0c0c0c;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: -10px;
+  }
+  .footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+  }
+  .footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+  }
+  
+  .socials-image{
+    width: 45px;
+    height: 45px;
+  }
+  
+  .guitar{
+    margin-top: -30px;
+    margin-bottom: 30px;
+    width: 60px;
+    height: 60px;
+  }

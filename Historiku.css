@@ -42,13 +42,13 @@ h1 {
 }
 
 .fotot {
-  margin-top: -50px;
+  margin-top: -90px;
 }
 
 .foto {
   margin-top: 25px;
-  width: 330px;
-  height: 220px;
+  width: 310px;
+  height: 200px;
 }
 
 button {
@@ -171,8 +171,8 @@ video {
 }
 
 footer{
-  background-color: #0c0c0c; /* Dark gray background color */
-  color: white; /* Text color */
+  background-color: #111111;
+  color: white; 
   text-align: center;
   padding: 10px;
   position: sticky;
