@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(Fonts/Montserrat-VariableFont_wght.ttf);
+}
+
 body {
   margin: 0;
   overflow: hidden;
@@ -48,7 +53,7 @@ button img {
 }
 
 .music-button {
-  top: 92%;
+  top: 92.3%;
   left: 2%;
   transform: translateY(-50%);
   padding: 10px;
@@ -94,12 +99,12 @@ button img {
 
 .song-name{
   font-size: 22px;
-  font-weight: 100;
+  font-weight: 300;
   position: absolute;
   top: 84%;
-  left: 5.6%;
+  left: 80px;
   color: white;
-  font-family:monospace;
+  font-family:'Montserrat', sans-serif;
 }
 
 
@@ -172,7 +177,7 @@ input:checked + .slider:before {
   right: -500px; 
   width: 500px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.988);
+  background-color: rgba(0, 0, 0, 0.98);
   transition: right 1.5s ease;
   z-index: 1;
   overflow-x: hidden;
@@ -192,8 +197,9 @@ input:checked + .slider:before {
   color: white;
   font-size: 20px;
   transition: color 1.5s ease;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+  font-family:'Montserrat', sans-serif;
+  font-weight: 300;
+ }
 
 .menu-item:hover {
   color: #7a7a7a; 
@@ -209,8 +215,81 @@ input:checked + .slider:before {
 }
 
 .cls-button {
-  padding: 3%;
+  padding-top: 65px;
   padding-right: 450px;
+  font-weight:900;
+  font-size: 50px;
+}
+
+.menu-item1 {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: color 1.5s ease;
+  font-weight:400;
+  font-size: 25px;
+  font-family:'Montserrat', sans-serif;
+ }
+
+.menu-item1:hover {
+  color: #7a7a7a; 
+}
+
+@media (max-width: 600px) {
+
+
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: -500px; 
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.988);
+    transition: right 1.5s ease;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
+
+  .menu-item1:hover {
+    color: #7a7a7a; 
+  }
+  
+  .menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 2;
+  color: white;
+  }
+  .cls-button {
+    padding-top: 65px;
+    padding-right: 250px;
+    font-weight:900;
+    font-size: 50px;
+  }
+
+
+  button {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 10px;
+    padding-right: 20px;
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+  }
+
 }
 
 

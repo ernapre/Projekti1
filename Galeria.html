@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slider</title>
     <link rel="stylesheet" href="Galeria.css">
 </head>
+
 <body>
     <script>
         var i = 0;
@@ -27,8 +29,8 @@
             document.getElementById('image-overlay').innerText = imgArray[i].hoverText;
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            ndrroImg(); 
+        document.addEventListener('DOMContentLoaded', function () {
+            ndrroImg();
         });
     </script>
 
@@ -38,8 +40,8 @@
             <div id="image-overlay"></div>
         </header>
         <div class="navigation">
-            <button class="prev" onclick="ndrroImg('prev')">Previous</button>
-            <button class="next" onclick="ndrroImg('next')">Next</button>
+            <button class="prev" onclick="ndrroImg('prev')">←</button>
+            <button class="next" onclick="ndrroImg('next')">→</button>
         </div>
     </div>
 
@@ -59,8 +61,8 @@
             <a href="login.html" class="menu-item">Log In</a>
 
             <div class="cls-button">
-            <a href="#" onclick="toggleMenu()" class="menu-item">X</a>
-        </div>
+                <a href="#" onclick="toggleMenu()" class="menu-item1">X</a>
+            </div>
 
         </div>
     </div>
@@ -72,23 +74,24 @@
         }
     </script>
 
-<footer>
-    <div class="footer-content">
-        <h3>MUZIKA ROCK NE MITROVICE</h3>
-        <img src="guitar.png" alt="" class="guitar">
-        <p>Zhytuni ne boten e Muzikes Rock ne Kosove nepermjet webfaqes tone...</p>
-        <p>Socials:</p>
-        <ul class="socials">
-            <li><a href="https://www.facebook.com/"><img src="facebook.png" alt="" class="socials-image"></a></li>
-            <li><a href="https://twitter.com/"><img src="twitter.png" alt="" class="socials-image"></a></li>
-            <li><a href="https://www.linkedin.com/"><img src="linkedin.png" alt="" class="socials-image"></a></li>
-        </ul>
-    </div>
-    <div class="footer-bottom">
-        <p>Copyright &copy; 2023 designed by <span>Erna Prekazi, Ermal Sadiku</span></p>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <h3>MUZIKA ROCK NE MITROVICE</h3>
+            <img src="guitar.png" alt="" class="guitar">
+            <p>Zhytuni ne boten e Muzikes Rock ne Kosove nepermjet webfaqes tone...</p>
+            <p>Socials:</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><img src="facebook.png" alt="" class="socials-image"></a></li>
+                <li><a href="https://twitter.com/"><img src="twitter.png" alt="" class="socials-image"></a></li>
+                <li><a href="https://www.linkedin.com/"><img src="linkedin.png" alt="" class="socials-image"></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2023 designed by <span>Erna Prekazi, Ermal Sadiku</span></p>
+        </div>
+    </footer>
 
 
 </body>
+
 </html>
