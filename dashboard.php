@@ -78,6 +78,7 @@
         <th>ID</th>
         <th>Username</th>
         <th>Email</th>
+        <th>Usertype</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -95,6 +96,7 @@
         <td>$row[id]</td>
         <td>$row[username]</td>
         <td>$row[email]</td>
+        <td>$row[usertype]</td>
         <td>
             <a class='btn btn-success' href='edit.php?id=$row[id]'>Edit</a>
             <a class='btn btn-danger' href='delete.php?id=$row[id]'>Delete</a>

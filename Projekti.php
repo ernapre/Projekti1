@@ -102,9 +102,9 @@
         <div class="menu-content">
 
             <a href="Projekti.php" class="menu-item">Home</a>
-            <a href="Historiku.html" class="menu-item">Historiku</a>
-            <a href="Galeria.html" class="menu-item">Galeria</a>
-            <a href="Tickets.html" class="menu-item">Tickets</a>
+            <a href="Historiku.php" class="menu-item">Historiku</a>
+            <a href="Galeria.php" class="menu-item">Galeria</a>
+            <a href="Tickets.php" class="menu-item">Tickets</a>
             <a href="login.php" class="menu-item">Log In</a>
 
             <div class="cls-button">
