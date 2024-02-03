@@ -13,6 +13,7 @@
  <div class="container">
         <div class="login-container">
             <form method="post" action="login.php" onsubmit="return validateForm()">
+            <?php include('errors.php'); ?>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" placeholder="Username" required>
 
