@@ -1,22 +1,30 @@
 <?php 
   session_start(); 
 
+  
   if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
     header("location: login.php");
+    exit();
   }
 
-$inactive_timeout = 30; //30 sekonda
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $inactive_timeout)) {
-    session_unset();
-    session_destroy();
-    $_SESSION['timeout_msg'] = "Your session has timed out. Please log in again.";
-    header('location: login.php');
-    exit();
-}
+  $inactive_timeout = 30; // 30 seconds
 
-$_SESSION['last_activity'] = time();
+  
+  if (isset($_SESSION['username'])) {
+    
+    if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $inactive_timeout)) {
+      session_unset();
+      session_destroy();
+      $_SESSION['timeout_msg'] = "Your session has timed out. Please log in again.";
+      header('location: login.php');
+      exit();
+    }
+
+    
+    $_SESSION['last_activity'] = time();
+  }
 
 ?>
 <!DOCTYPE html>
