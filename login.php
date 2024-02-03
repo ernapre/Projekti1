@@ -1,6 +1,6 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,21 +12,23 @@
 
     <div class="container">
         <div class="login-container">
-            <form onsubmit="return validateForm()">
+            <form method="post" action="login.php" onsubmit="return validateForm()">
+                <?php include('errors.php'); ?>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" placeholder="Username" required>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Password" required>
 
-                <a href="register.html" class="register-link">Don't have an account? Register here!</a>
+                <a href="register.php" class="register-link">Don't have an account? Register here!</a>
+                
+            <div class="login-button-container">
+                <button type="submit" class="login-button" name="login_user">Login</button>
+            </div>
+        
             </form>
         </div>
-        <form onsubmit="return validateForm()">
-            <div class="login-button-container">
-                <button type="submit" class="login-button">Login</button>
-            </div>
-        </form>
+        
     </div>
 
     <div id="content">
@@ -37,7 +39,7 @@
 
     <div class="menu-container">
         <div class="menu-content">
-            <a href="Projekti.html" class="menu-item">Home</a>
+            <a href="Projekti.php" class="menu-item">Home</a>
             <a href="Historiku.html" class="menu-item">Historiku</a>
             <a href="Galeria.html" class="menu-item">Galeria</a>
             <a href="Tickets.html" class="menu-item">Tickets</a>

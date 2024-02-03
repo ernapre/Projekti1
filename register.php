@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,29 +11,28 @@
 
 <div class="container">
     <div class="register-container">
-        <form onsubmit="return validateForm()">
+        <form method="post" action="register.php" onsubmit="return validateForm()">
+            <?php include('errors.php'); ?>
           <label for="username">Username:</label>
-          <input type="text" id="username" name="username" placeholder="Username" required>
+          <input type="text" id="username" name="username" placeholder="Username" required value="<?php echo $username; ?>">
 
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Password" required>
+          <input type="password" id="password_1" name="password_1" placeholder="Password" required>
 
           <label for="confirmPassword">Confirm Password:</label>
-          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+          <input type="password" id="password_2" name="password_2" placeholder="Confirm Password" required>
 
           <label for="email">Email Address:</label>
-          <input type="email" id="email" name="email" placeholder="Email Address" required>
+          <input type="email" id="email" name="email" placeholder="Email Address" required value ="<?php echo $email; ?>">
        
-          <a href="login.html" class="log-in-link">Already have an account? Log in here!</a>
+          <a href="login.php" class="log-in-link">Already have an account? Log in here!</a>
    
+        </div>
+        <div class="register-button-container">
+         <button type="submit" class="register-button" name="reg_user">Register</button>
+         </div>
         </form>
     </div>
-    <form onsubmit="return validateForm()">
-    <div class="register-button-container">
-        <button type="submit" class="register-button">Register</button>
-    </div>
-    
-</form>
 </div>
 
 <div id="content">

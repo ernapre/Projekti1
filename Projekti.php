@@ -1,3 +1,24 @@
+<?php 
+  session_start(); 
+
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+  }
+
+$inactive_timeout = 30; //30 sekonda
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $inactive_timeout)) {
+    session_unset();
+    session_destroy();
+    $_SESSION['timeout_msg'] = "Your session has timed out. Please log in again.";
+    header('location: login.php');
+    exit();
+}
+
+$_SESSION['last_activity'] = time();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,16 +93,41 @@
     <div class="menu-container">
         <div class="menu-content">
 
-            <a href="Projekti.html" class="menu-item">Home</a>
+            <a href="Projekti.php" class="menu-item">Home</a>
             <a href="Historiku.html" class="menu-item">Historiku</a>
             <a href="Galeria.html" class="menu-item">Galeria</a>
             <a href="Tickets.html" class="menu-item">Tickets</a>
-            <a href="login.html" class="menu-item">Log In</a>
+            <a href="login.php" class="menu-item">Log In</a>
 
             <div class="cls-button">
                 <a href="#" onclick="toggleMenu()" class="menu-item1">X</a>
             </div>
+<div class="content">
+    
+    <?php if (isset($_SESSION['success'])) : ?>
+      <div class="error success" >
+        <h3>
+          <?php 
+            echo $_SESSION['success']; 
+            unset($_SESSION['success']);
+          ?>
+        </h3>
+      </div>
+    <?php endif ?>
 
+ 
+    <?php  if (isset($_SESSION['username'])) : ?>
+        <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+        <p> <a href="Projekti.php?logout='1'" style="color: red;">logout</a> </p>
+    <?php endif ?>
+
+    <?php if (isset($_SESSION['timeout_msg'])) : ?>
+            <div class="error">
+                <p><?php echo $_SESSION['timeout_msg']; unset($_SESSION['timeout_msg']); ?></p>
+            </div>
+        <?php endif ?>
+
+</div>
         </div>
     </div>
 
