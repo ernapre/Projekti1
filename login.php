@@ -10,10 +10,9 @@
 
 <body>
 
-    <div class="container">
+ <div class="container">
         <div class="login-container">
             <form method="post" action="login.php" onsubmit="return validateForm()">
-                <?php include('errors.php'); ?>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" placeholder="Username" required>
 
@@ -21,20 +20,22 @@
                 <input type="password" id="password" name="password" placeholder="Password" required>
 
                 <a href="register.php" class="register-link">Don't have an account? Register here!</a>
-                
+
+        </div>
+        <form onsubmit="return validateForm()">
+
             <div class="login-button-container">
                 <button type="submit" class="login-button" name="login_user">Login</button>
             </div>
-        
-            </form>
-        </div>
-        
+        </form>
+        </form>
     </div>
 
     <div id="content">
         <button id="menuButton" onclick="toggleMenu()">
             <img src="Btn.png" alt="Menu Button">
         </button>
+    </div>
     </div>
 
     <div class="menu-container">
