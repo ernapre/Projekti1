@@ -1,0 +1,368 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(Fonts/Montserrat-VariableFont_wght.ttf);
+  }
+
+body{
+    background-color: black;
+}
+
+.tiketa{
+    position: relative;
+    margin-bottom: -180px;
+}
+
+.EmriBandes{
+    color: rgb(49, 49, 49);
+    position: absolute;
+    bottom: 185px;
+    left: 77px;
+    font-size: 80px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Data{
+    color: rgb(49, 49, 49);
+    position: absolute;
+    bottom: 153px;
+    left: 136px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Koha{
+    color: rgb(49, 49, 49);
+    position: absolute;
+    bottom: 228px;
+    left: 356px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Cmimi{
+    color: rgb(49, 49, 49);
+    position: absolute;
+    bottom: 228px;
+    left: 482px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Adresa{
+    color: rgb(49, 49, 49);
+    position: absolute;
+    bottom: 163px;
+    left: 356px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Description{
+    width: 370px;
+    margin-top: 200px;
+}
+
+.Description h1{
+    color: white;
+    width:  50px;
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Description p{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    
+}
+.ticket img{
+    width: 750px;
+    padding-top: 20px;
+}
+
+.ticket{
+    overflow-y: scroll;
+    direction: rtl;
+    height: 780px;
+    white-space: pre-wrap;
+    padding-left: 30px;
+}
+
+.ticket::-webkit-scrollbar {
+    width: 6.5px;
+    margin-left: 150px;
+    padding-right: 50px;
+    height: 780px;
+  }
+  
+  .ticket::-webkit-scrollbar-thumb {
+    background-color: #90909000;
+    border-radius: 6px;
+  }
+  
+  .ticket::-webkit-scrollbar-track {
+    background-color: #2e2e2e00;
+    border-radius: 6px;
+  }
+  
+
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 130px;
+    padding-top: 20px;
+}
+
+button {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 10px;
+    padding-right: 40px;
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    z-index: 10;
+  }
+  
+  #content {
+    position: relative;
+    z-index: 1;
+    color: black;
+    padding-left: 10px;
+  }
+  
+  button img {
+    width: 30px;
+    height: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: -500px; 
+    width: 500px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: right 1.5s ease;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 60px;
+  } 
+  
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  
+  .menu-item {
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 1.5s ease;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 300;
+   }
+  
+  .menu-item:hover {
+    color: #7a7a7a; 
+  }
+  
+  .menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 13;
+    color: white;
+  }
+  
+  .cls-button {
+    padding-top: 57px;
+    padding-right: 450px;
+    font-weight:900;
+    font-size: 50px;
+    font-family:'Montserrat', sans-serif;
+  }
+  
+  .menu-item1 {
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 1.5s ease;
+    font-weight:400;
+    font-size: 25px;
+  }
+  
+  .menu-item1:hover {
+    color: #7a7a7a; 
+  }
+
+  @media (max-width: 600px) {
+
+    .Description p{
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        width: 300px; 
+    }
+
+    .Description{
+      margin-top: 0px;
+      width: 350px;
+    }
+
+    .EmriBandes{
+        color: rgb(49, 49, 49);
+        position: absolute;
+        bottom: 155px;
+        left: 27px;
+        font-size: 35px;
+        font-weight: 800;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .Data{
+        color: rgb(49, 49, 49);
+        position: absolute;
+        bottom: 128px;
+        left: 45px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .Koha{
+        color: rgb(49, 49, 49);
+        position: absolute;
+        bottom: 155px;
+        left: 142px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .Cmimi{
+        color: rgb(49, 49, 49);
+        position: absolute;
+        bottom: 155px;
+        left: 192px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .Adresa{
+        color: rgb(49, 49, 49);
+        position: absolute;
+        bottom: 118px;
+        left: 102px;
+        font-size: 10px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+        width: 100px;
+    }
+
+    body{
+        background-color: black;
+        margin: 0px;
+        overflow-x: hidden;
+    }
+
+    .tiketa{
+        position: relative;
+        margin-bottom: -180px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        padding-top: 10px;
+        margin-top: 0px;
+        width: 350px;
+    }
+
+    .ticket{
+        overflow-y:auto;
+        direction: rtl;
+        width: 300px;
+        white-space: pre-wrap;
+        padding-left: 10px;
+        padding-top: 30px;
+    }
+
+    .ticket img{
+        width: 300px;
+        padding-top: 0px;
+    }
+
+    .menu-container {
+      position: fixed;
+      top: 0;
+      right: -500px; 
+      width: 300px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: right 1.5s ease;
+      z-index: 1;
+      overflow-x: hidden;
+      padding-top: 60px;
+    }
+  
+    .menu-item1:hover {
+      color: #7a7a7a; 
+    }
+    
+    .menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+    color: white;
+    }
+    .cls-button {
+      padding-top: 65px;
+      padding-right: 250px;
+      font-weight:900;
+      font-size: 50px;
+    }
+  
+    button {
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      padding: 10px;
+      padding-right: 30px;
+      background-color: #ffffff00;
+      border: none;
+      cursor: pointer;
+      justify-content: flex-end;
+      align-items: center;
+      align-content: center;
+    }
+  
+  }
