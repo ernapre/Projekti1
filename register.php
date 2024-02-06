@@ -42,31 +42,57 @@
 </div>
 
 <div class="menu-container">
-    <div class="menu-content">
-        <a href="Projekti.php" class="menu-item">Home</a>
-        <a href="Historiku.html" class="menu-item">Historiku</a>
-        <a href="Galeria.html" class="menu-item">Galeria</a>
-        <a href="Tickets.html" class="menu-item">Tickets</a>
-        <?php
-        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
-            echo '<a href="login.php" class="menu-item">Log Out</a>';
+        <div class="menu-content">
 
-          
+            <a href="Projekti.php" class="menu-item">Home</a>
+            <a href="Historiku.php" class="menu-item">Historiku</a>
+            <a href="Galeria.php" class="menu-item">Galeria</a>
+
+            <?php
+         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+          echo '<a href="Projekti.php?logout=1" class="menu-item">Log Out</a>';
+          echo '<a href="Tickets.php" class="menu-item">Tickets</a>';
+
             if ($_SESSION['is_admin']) {
                 echo '<a href="dashboard.php" class="menu-item">Dashboard</a>';
             }
-        } else {
-            
+         } else {
             echo '<a href="login.php" class="menu-item">Log In</a>';
-        }
-        ?>
-        
-        
-        <div class="cls-button">
-            <a href="#" onclick="toggleMenu()" class="menu-item1">X</a>
+            echo '<a href="JoTicket.php" class="menu-item">Tickets</a>';
+         }
+         ?>
+            
+
+            <div class="cls-button">
+                <a href="#" onclick="toggleMenu()" class="menu-item1">X</a>
+            </div>
+                <div class="content">
+                    
+                    <?php if (isset($_SESSION['success'])) : ?>
+                    <div class="error success" >
+                        <h3>
+                        <?php 
+                            echo $_SESSION['success']; 
+                            unset($_SESSION['success']);
+                        ?>
+                        </h3>
+                    </div>
+                    <?php endif ?>
+
+                
+                    <?php  if (isset($_SESSION['username'])) : ?>
+                        <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+                    <?php endif ?>
+
+                    <?php if (isset($_SESSION['timeout_msg'])) : ?>
+                            <div class="error">
+                                <p><?php echo $_SESSION['timeout_msg']; unset($_SESSION['timeout_msg']); ?></p>
+                            </div>
+                        <?php endif ?>
+
+                </div>
         </div>
     </div>
-</div>
 
 <script>
   function validateForm() {

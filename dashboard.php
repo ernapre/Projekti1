@@ -76,6 +76,71 @@
     </tbody>
   </table>
 
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Performuesi</th>
+        <th>Data</th>
+        <th>Koha</th>
+        <th>Cmimi</th>
+        <th>Vendi</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $sql_tickets = "SELECT * FROM tickets";
+      $result_tickets = $conn->query($sql_tickets);
+      if (!$result_tickets) {
+        die("Invalid query!");
+      }
+      while ($row_tickets = $result_tickets->fetch_assoc()) {
+        echo "
+      <tr>
+        <td>$row_tickets[ID]</td>
+        <td>$row_tickets[Performuesi]</td>
+        <td>$row_tickets[Data]</td>
+        <td>$row_tickets[Koha]</td>
+        <td>$row_tickets[Cmimi]</td>
+        <td>$row_tickets[Vendi]</td>
+        <td>
+            <a class='btn btn-success' href='edit_ticket.php?ID=$row_tickets[ID]'>Edit</a>
+        </td>
+      </tr>";
+      }
+      ?>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Admin Username</th>
+            <th>Change Description</th>
+            <th>Change Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $changes_query = "SELECT * FROM changes";
+        $changes_result = mysqli_query($conn, $changes_query);
+
+        while ($change = mysqli_fetch_assoc($changes_result)) {
+            echo "
+                <tr>
+                    <td>{$change['id']}</td>
+                    <td>{$change['admin_username']}</td>
+                    <td>{$change['change_description']}</td>
+                    <td>{$change['change_date']}</td>
+                </tr>
+            ";
+        }
+        ?>
+    </tbody>
+</table>
+
   <div id="content">
         <button id="menuButton" onclick="toggleMenu()">
             <img src="Btn.png" alt="Menu Button">

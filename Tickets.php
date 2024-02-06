@@ -1,6 +1,41 @@
 <?php 
   session_start(); 
 
+  include('connection.php');
+
+  $ticketId1 = isset($_GET['ticket_id_1']) ? $_GET['ticket_id_1'] : 1;
+  $ticketId2 = isset($_GET['ticket_id_2']) ? $_GET['ticket_id_2'] : 2;
+  $ticketId3 = isset($_GET['ticket_id_3']) ? $_GET['ticket_id_3'] : 3;
+
+  // i merr infot per tiket t par
+  $query1 = "SELECT * FROM tickets WHERE ID = $ticketId1";
+  $result1 = mysqli_query($conn, $query1);
+
+  $performuesi1 = $data1 = $koha1 = $cmimi1 = $vendi1 = '';
+
+  if ($result1 && mysqli_num_rows($result1) > 0) {
+    $row1 = mysqli_fetch_assoc($result1);
+    $performuesi1 = $row1['Performuesi'];
+    $data1 = $row1['Data'];
+    $koha1 = $row1['Koha'];
+    $cmimi1 = $row1['Cmimi'];
+    $vendi1 = $row1['Vendi'];
+  }
+
+  // i merr infot per tiket t dyt
+  $query2 = "SELECT * FROM tickets WHERE ID = $ticketId2";
+  $result2 = mysqli_query($conn, $query2);
+
+  $performuesi2 = $data2 = $koha2 = $cmimi2 = $vendi2 = '';
+
+  if ($result2 && mysqli_num_rows($result2) > 0) {
+    $row2 = mysqli_fetch_assoc($result2);
+    $performuesi2 = $row2['Performuesi'];
+    $data2 = $row2['Data'];
+    $koha2 = $row2['Koha'];
+    $cmimi2 = $row2['Cmimi'];
+    $vendi2 = $row2['Vendi'];
+  }
   
   if (isset($_GET['logout'])) {
     session_destroy();
@@ -8,6 +43,28 @@
     header("location: projekti.php");
     exit();
   }
+
+  // i merr infot per tiket t tret
+  $query3 = "SELECT * FROM tickets WHERE ID = $ticketId3";
+  $result3 = mysqli_query($conn, $query3);
+
+$performuesi3 = $data3 = $koha3 = $cmimi3 = $vendi3 = '';
+
+if ($result3 && mysqli_num_rows($result3) > 0) {
+  $row3 = mysqli_fetch_assoc($result3);
+  $performuesi3 = $row3['Performuesi'];
+  $data3 = $row3['Data'];
+  $koha3 = $row3['Koha'];
+  $cmimi3 = $row3['Cmimi'];
+  $vendi3 = $row3['Vendi'];
+}
+
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header("location: projekti.php");
+  exit();
+}
 
   $inactive_timeout = 300; 
 
@@ -54,41 +111,32 @@
 
         </div>
 
-        <div class="ticket">
-            <div class="tiketa">
+        <div class="ticket">    
+        <div class="tiketa">
                 <img src="Ticket.png" alt="Ticket" height="auto">
-                <div class="EmriBandes">MAK</div>
-                <div class="Data">07.27.2024</div>
-                <div class="Koha">21:00</div>
-                <div class="Cmimi">€5</div>
-                <div class="Adresa">Sheshi Zahir Pajaziti</div>
+                <div class="EmriBandes"><?php echo $performuesi1; ?></div>
+                <div class="Data"><?php echo $data1; ?></div>
+                <div class="Koha"><?php echo $koha1; ?></div>
+                <div class="Cmimi">€<?php echo $cmimi1; ?></div>
+                <div class="Adresa"><?php echo $vendi1; ?></div>
             </div>
 
             <div class="tiketa">
                 <img src="Ticket.png" alt="Ticket" height="auto">
-                <div class="EmriBandes">MAK</div>
-                <div class="Data">07.27.2024</div>
-                <div class="Koha">21:00</div>
-                <div class="Cmimi">€5</div>
-                <div class="Adresa">Sheshi Zahir Pajaziti</div>
+                <div class="EmriBandes"><?php echo $performuesi2; ?></div>
+                <div class="Data"><?php echo $data2; ?></div>
+                <div class="Koha"><?php echo $koha2; ?></div>
+                <div class="Cmimi">€<?php echo $cmimi2; ?></div>
+                <div class="Adresa"><?php echo $vendi2; ?></div>
             </div>
 
             <div class="tiketa">
                 <img src="Ticket.png" alt="Ticket" height="auto">
-                <div class="EmriBandes">MAK</div>
-                <div class="Data">07.27.2024</div>
-                <div class="Koha">21:00</div>
-                <div class="Cmimi">€5</div>
-                <div class="Adresa">Sheshi Zahir Pajaziti</div>
-            </div>
-
-            <div class="tiketa">
-                <img src="Ticket.png" alt="Ticket" height="auto">
-                <div class="EmriBandes">MAK</div>
-                <div class="Data">07.27.2024</div>
-                <div class="Koha">21:00</div>
-                <div class="Cmimi">€5</div>
-                <div class="Adresa">Sheshi Zahir Pajaziti</div>
+                <div class="EmriBandes"><?php echo $performuesi3; ?></div>
+                <div class="Data"><?php echo $data3; ?></div>
+                <div class="Koha"><?php echo $koha3; ?></div>
+                <div class="Cmimi">€<?php echo $cmimi3; ?></div>
+                <div class="Adresa"><?php echo $vendi3; ?></div>
             </div>
         </div>
 

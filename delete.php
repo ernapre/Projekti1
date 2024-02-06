@@ -5,6 +5,6 @@
         $sql = "DELETE from `users` where id=$id";
         $conn->query($sql);
     }
-    header('location:/project/dashboard.php');
+    header('location:/Projekti/dashboard.php');
     exit;
 ?>

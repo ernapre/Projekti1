@@ -33,14 +33,14 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family:'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: black;
         }
 
         nav {
-            background-color: #333;
+            background-color: black;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -49,11 +49,13 @@ if(isset($_POST['submit'])){
         .card-container {
             width: 25%;
             margin: 50px auto;
-            background-color: #fff;
+            background-color: black;
+            border: 1px solid white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            color: white;
         }
 
 
@@ -78,7 +80,7 @@ if(isset($_POST['submit'])){
             text-decoration: none;
             padding: 5px 10px;
             border: 1px solid #fff;
-            background-color: #28a745;
+            background-color: black;
             color: #fff;
             border-radius: 5px;
         }
@@ -87,8 +89,8 @@ if(isset($_POST['submit'])){
             text-decoration: none;
             padding: 5px 10px;
             border: 1px solid #333;
-            background-color: #fff;
-            color: #333;
+            background-color: #FF00A8;
+            color: white;
             border-radius: 5px;
             margin-right: 5px;
         }
@@ -115,9 +117,39 @@ if(isset($_POST['submit'])){
             margin-bottom: 15px;
         }
         
-        .form-control{
-            margin-top: 10px;
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 15px; 
         }
+
+.btn-common {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+
+.btn-submit {
+    border: 1px solid #FF00A8;
+    color: #FF00A8;
+    font-family:'Montserrat', sans-serif;
+    background-color: black;
+}
+
+
+.btn-cancel {
+    border: 1px solid #52d800;;
+    color: #52d800;
+    font-family:'Montserrat', sans-serif;
+    background-color: black;
+}
+
+
 
     </style>
 </head>
@@ -148,8 +180,9 @@ if(isset($_POST['submit'])){
     <label>Password:</label>
     <input type="password" name="password" class="form-control"> <br>
 
-    <button class="btn btn-success" type="submit" name="submit">Submit</button><br>
-    <a class="btn btn-info" href="dashboard.php">Cancel</a><br>
+    <button class="btn btn-common btn-submit" type="submit" name="submit">Submit</button>
+    <a class="btn btn-common btn-cancel" href="dashboard.php">Cancel</a>
+
 </form>
 
 </div>

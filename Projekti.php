@@ -161,6 +161,14 @@
         }
     </script>
 
+<script>
+        // mos e le mu kthy prap te log-in masi ke login
+        history.pushState(null, null, window.location.href);
+        window.onpopstate = function () {
+            history.pushState(null, null, window.location.href);
+        };
+    </script>
+
 </body>
 
 </html>

@@ -56,7 +56,7 @@ if (isset($_POST['reg_user'])) {
         $_SESSION['is_admin'] = false;
     }
 
-  	$_SESSION['success'] = "You are now logged in";
+  	$_SESSION['success'] = "";
   	header('location: Projekti.php');
   }
 }
@@ -88,7 +88,7 @@ if (isset($_POST['login_user'])) {
             $_SESSION['is_admin'] = false;
         }
 
-  	  $_SESSION['success'] = "You are now logged in";
+  	  $_SESSION['success'] = "";
   	  header('location: Projekti.php');
   	}else {
   		array_push($errors, "Wrong username/password combination");

@@ -1,54 +1,48 @@
 <?php
 include "connection.php";
+include "server.php";
 
-$error_message = ""; 
+$error_message = "";
 
+if(isset($_GET['ID'])) {
+    $ID = $_GET['ID'];
 
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-
-   
-    $select_query = "SELECT * FROM `users` WHERE `id` = $id";
+    $select_query = "SELECT * FROM `tickets` WHERE `ID` = $ID";
     $result = mysqli_query($conn, $select_query);
 
     if ($result) {
-        $user = mysqli_fetch_assoc($result);
+        $ticket = mysqli_fetch_assoc($result);
     } else {
         echo "Error: " . mysqli_error($conn);
     }
 } else {
-    
     header("Location: dashboard.php");
     exit();
 }
 
 if (isset($_POST['submit'])) {
-    $newUsername = $_POST['newUsername'];
-    $newEmail = $_POST['newEmail'];
-    $newPassword = md5($_POST['newPassword']);
+    $newPerformuesi = $_POST['newPerformuesi'];
+    $newData = $_POST['newData'];
+    $newKoha = $_POST['newKoha'];
+    $newCmimi = $_POST['newCmimi'];
+    $newVendi = $_POST['newVendi'];
+
+    $update_query = "UPDATE `tickets` SET `Performuesi`='$newPerformuesi', `Data`='$newData', `Koha`='$newKoha', `Cmimi`='$newCmimi', `Vendi`='$newVendi' WHERE `ID`=$ID";
+    $update_result = mysqli_query($conn, $update_query);
 
     
-    $checkUsernameQuery = "SELECT * FROM `users` WHERE `username` = '$newUsername' AND `id` != $id";
-    $checkUsernameResult = mysqli_query($conn, $checkUsernameQuery);
+    $admin_username = $_SESSION['username'];
+    $change_description = "Admin changed ticket with ID $ID";
+    $log_change_query = "INSERT INTO changes (admin_username, change_description) VALUES ('$admin_username', '$change_description')";
+    mysqli_query($conn, $log_change_query);
 
-    
-    $checkEmailQuery = "SELECT * FROM `users` WHERE `email` = '$newEmail' AND `id` != $id";
-    $checkEmailResult = mysqli_query($conn, $checkEmailQuery);
 
-    if (mysqli_num_rows($checkUsernameResult) > 0) {
-        $error_message = "Username already exists. Choose a different username.";
-    } elseif (mysqli_num_rows($checkEmailResult) > 0) {
-        $error_message = "Email already exists. Choose a different email.";
+
+    if ($update_result) {
+        header("Location: dashboard.php");
+        exit();
     } else {
-        $update_query = "UPDATE `users` SET `username`='$newUsername', `email`='$newEmail', `password`='$newPassword' WHERE `id`=$id";
-        $update_result = mysqli_query($conn, $update_query);
-
-        if ($update_result) {
-            header("Location: dashboard.php");
-            exit();
-        } else {
-            echo "Error: " . mysqli_error($conn);
-        }
+        echo "Error: " . mysqli_error($conn);
     }
 }
 ?>
@@ -59,7 +53,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
+          body {
             font-family: 'Montserrat', sans-serif; 
             margin: 0;
             padding: 0;
@@ -146,37 +140,47 @@ if (isset($_POST['submit'])) {
 <body>
 
 <nav>
-    <h2>Admin Dashboard</h2>
+    <h2>Dashboard</h2>
     <a class="navbar-btn" href="dashboard.php">Back to Dashboard</a>
 </nav>
 
 <div class="card-container">
     <div class="card-header">
-        <h1>Edit User</h1>
+        <h1>Edit Ticket</h1>
     </div>
 
     <?php
-        if($error_message){
-            echo '<p style="color: red;">' . $error_message . '</p>';
-        }
-        ?>
+    if($error_message) {
+        echo '<p style="color: red;">' . $error_message . '</p>';
+    }
+    ?>
     <form method="post" action="">
         <div class="form-group">
-            <label>Username:</label>
-            <input type="text" name="newUsername" class="form-control" value="<?php echo $user['username']; ?>">
+            <label>Performuesi:</label>
+            <input type="text" name="newPerformuesi" class="form-control" value="<?php echo $ticket['Performuesi']; ?>">
         </div>
 
         <div class="form-group">
-            <label>Email:</label>
-            <input type="text" name="newEmail" class="form-control" value="<?php echo $user['email']; ?>">
+            <label>Data:</label>
+            <input type="text" name="newData" class="form-control" value="<?php echo $ticket['Data']; ?>">
         </div>
 
         <div class="form-group">
-            <label>New Password:</label>
-            <input type="password" name="newPassword" class="form-control">
+            <label>Koha:</label>
+            <input type="text" name="newKoha" class="form-control" value="<?php echo $ticket['Koha']; ?>">
         </div>
 
-        <button class="btn btn-success" type="submit" name="submit">Update User</button>
+        <div class="form-group">
+            <label>Cmimi:</label>
+            <input type="text" name="newCmimi" class="form-control" value="<?php echo $ticket['Cmimi']; ?>">
+        </div>
+
+        <div class="form-group">
+            <label>Vendi:</label>
+            <input type="text" name="newVendi" class="form-control" value="<?php echo $ticket['Vendi']; ?>">
+        </div>
+
+        <button class="btn btn-success" type="submit" name="submit">Update Ticket</button>
     </form>
 </div>
 

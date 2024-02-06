@@ -53,9 +53,9 @@
             </div>
         </div>
 
-        <div class="content">
+        <div class="content2">
 
-            <div class="textbox" id="textbox">
+            <div class="textbox">
                 <div class="content-text">Fillet e rock-ut kosovar 1966-69
 
                     Ata, në fillimet e tyre, janë parë si përçues të një kulture të huaj. Janë akuzuar si thyes të kodeve morale, andaj të përbuzur, të urrejtur, të dyshimt dhe si “të pamoralshëm”, ata janë anatemuar në tërësinë e tyre, si një strukturë e padurueshme e kontekstit shoqëror të atëhershëm. Por, shiquar nga perspektiva jonë e sotme, e botëkuptimeve të reja dhe shiquar nga prizmi i kulturës së re politike (kulturë që ne si popull kemi përqafuar që nga vitet ’90-ta), ata na shpërfaqen në një pamje tjetër. Sot e shohim se ata kanë qenë struktura progresive e shoqërisë sonë dhe strukturë anticipuese e botëkuptimeve tona të mëvonshme… Merita e madhe e gjeneratës së parë të rock muzikës, është se ajo ka thyer tabu-t e shoqërisë tonë në një kontekst delikat politik. Përmes këtij segmenti modest të veprimit, ne si shoqëri kemi treguar vitalitetin dhe afinitetin për të përqafuar vlerat e botës perendimore.
@@ -68,7 +68,7 @@
                     controls></video>
             </div>
 <div class="dytekste">
-            <div class="textbox" id="textbox">
+            <div class="textbox">
                 <div class="content-text">Muzika zbavitëse e viteve ’60-ta
 
                     Nëse mbështetemi në inçizimet e vjetra nga arkivi i Radio-Prishtinës, mund të konkludohet se muzika zbavitëse kosovare (në gjirin e së cilës lind rock-muzika) në vitet ’60-ta, ka qenë nën ndikimin e fortë të muzikës jugosllave. Ajo ka qenë një kopje besnike e muzikës së popullarizuar të kultivuar në qendrat më të mëdha jugosllave. Kjo është e kuptueshme jo vetëm për faktin se ne nominalisht i kemi takuar nënqiellit kulturor jugosllav, por edhe për shkak se në Prishtinën e atëhershme kanë vepruar një numër i muzikantëve nga viset tjera (që jeta i ka përplasur në “krahinën e pazhvilluar”), ndaj edhe kanë ndikuar në pamjen përfundimtare të muzikës zbavitëse të Kosovës të kohës. Gjithsesi, si model gjithmonë kanë shërbyer festivalet jugosllave me renome të madhe të kohës (“Pranvera e Beogradit”, “Zagrebfest”, “Festivali i Opatisë” “Vash shlager sezone” etj.), si dhe, pjesërisht, festivali italian i San Remos. Ky zhanër i muzikës, që element të rëndësishëm valorizuies e ka “modernitetin”, e duke e ditur se qendrat e mëdha jugosllave mirë e kanë përcjellur trendet e muzikës europiene, për muzikën tonë zbavitëse ka qenë një përparësi, meqë ne, në mënyrë indirekte, skena jonë ka qenë, megjithatë, e informuar me tendencat e muzikës së asaj periudhe kohore.
@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="textbox" id="textbox">
+            <div class="textbox" >
                 <div class="content-text">Rock-kultura si fenomen planetar/ Hapja ndaj botës perendimore anglofone
 
                     Në mesin e viteve ’60-ta, bota jonë e muzikës zbavitëse fillon të ndryshojë. Për herë të parë, influencat vijnë, përpos kanaleve të zakonshme, edhe nga një “botë e jashtme” – nga bota perendimore anglofone, madje, në masë të madhe ato vijnë në mënyrë direkte. Është fjala për paraqitjen e parë të muzikës rock në nënqiellin tonë. Kjo muzikë, e ardhur kryesisht nga Britania, siq dihet, ka qenë një risi e kohës për mjedisin tonë, andaj në fillim ajo ka tingëlluar si një muzikë krejtësisht e re, dhe aq ka dalluar nga muzika e deri atëhershme sa që kjo si e till, është dukur (thuaj) se ka zbritur nga një planet tjetër. Në vijim të viteve (duke fituar gjithnjë numër më të madh adhuruesish), fillon të zë vend në mozaikun e muzikës sonë të popullarizuar.
