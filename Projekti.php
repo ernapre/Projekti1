@@ -5,11 +5,12 @@
   if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header("location: login.php");
+    header("location: Projekti.php");
     exit();
-  }
+}
 
-  $inactive_timeout = 30; // 30 seconds
+
+  $inactive_timeout = 3000; 
 
   
   if (isset($_SESSION['username'])) {
@@ -104,13 +105,26 @@
             <a href="Projekti.php" class="menu-item">Home</a>
             <a href="Historiku.php" class="menu-item">Historiku</a>
             <a href="Galeria.php" class="menu-item">Galeria</a>
-            <a href="Tickets.php" class="menu-item">Tickets</a>
-            <a href="login.php" class="menu-item">Log In</a>
+            <?php
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+            echo '<a href="Projekti.php?logout=1" class="menu-item">Log Out</a>';
+            echo '<a href="Tickets.php" class="menu-item">Tickets</a>';
+            
+
+            if ($_SESSION['is_admin']) {
+                echo '<a href="dashboard.php" class="menu-item">Dashboard</a>';
+            }
+         } else {
+            echo '<a href="login.php" class="menu-item">Log In</a>';
+            echo '<a href="JoTicket.php" class="menu-item">Tickets</a>';
+         }
+         ?>
+            
 
             <div class="cls-button">
                 <a href="#" onclick="toggleMenu()" class="menu-item1">X</a>
             </div>
-<div class="content">
+<div class="content1">
     
     <?php if (isset($_SESSION['success'])) : ?>
       <div class="error success" >
@@ -125,8 +139,9 @@
 
  
     <?php  if (isset($_SESSION['username'])) : ?>
-        <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="Projekti.php?logout='1'" style="color: red;">logout</a> </p>
+        <div class="welcome">
+        <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 300;">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    </div>
     <?php endif ?>
 
     <?php if (isset($_SESSION['timeout_msg'])) : ?>

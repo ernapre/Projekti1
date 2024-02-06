@@ -26,7 +26,6 @@ if (isset($_POST['submit'])) {
     $newUsername = $_POST['newUsername'];
     $newEmail = $_POST['newEmail'];
     $newPassword = md5($_POST['newPassword']);
-    $newUsertype = $_POST['newUsertype'];
 
     
     $checkUsernameQuery = "SELECT * FROM `users` WHERE `username` = '$newUsername' AND `id` != $id";
@@ -41,7 +40,7 @@ if (isset($_POST['submit'])) {
     } elseif (mysqli_num_rows($checkEmailResult) > 0) {
         $error_message = "Email already exists. Choose a different email.";
     } else {
-        $update_query = "UPDATE `users` SET `username`='$newUsername', `email`='$newEmail', `password`='$newPassword', `usertype`='$newUsertype' WHERE `id`=$id";
+        $update_query = "UPDATE `users` SET `username`='$newUsername', `email`='$newEmail', `password`='$newPassword' WHERE `id`=$id";
         $update_result = mysqli_query($conn, $update_query);
 
         if ($update_result) {
@@ -162,14 +161,6 @@ if (isset($_POST['submit'])) {
         <div class="form-group">
             <label>New Password:</label>
             <input type="password" name="newPassword" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Usertype:</label>
-            <select name="newUsertype" class="form-control">
-                <option value="admin" <?php echo ($user['usertype'] == 'admin') ? 'selected' : ''; ?>>admin</option>
-                <option value="user" <?php echo ($user['usertype'] == 'user') ? 'selected' : ''; ?>>user</option>
-            </select>
         </div>
 
         <button class="btn btn-success" type="submit" name="submit">Update User</button>

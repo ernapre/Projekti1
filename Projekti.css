@@ -3,6 +3,7 @@
   src: url(Fonts/Montserrat-VariableFont_wght.ttf);
 }
 
+
 body {
   margin: 0;
   overflow: hidden;
@@ -180,7 +181,6 @@ input:checked + .slider:before {
   background-color: rgba(0, 0, 0, 0.98);
   transition: right 1.5s ease;
   z-index: 1;
-  overflow-x: hidden;
   padding-top: 60px;
 }
 
@@ -190,6 +190,11 @@ input:checked + .slider:before {
   align-items: center;
   color: white;
 }
+
+.menu-content p {
+  font-family:'Montserrat', sans-serif;
+}
+
 
 .menu-item {
   padding: 20px;
@@ -236,13 +241,14 @@ input:checked + .slider:before {
   color: #7a7a7a; 
 }
 
-.content {
+.content1 {
+  display: flex;
+    margin-top: 0px;
     width: 30%;
-    margin-top: 320px;
-    margin-left: 280px;
+    margin-left: 0px;
     padding: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
   }
+
 
 @media (max-width: 600px) {
 

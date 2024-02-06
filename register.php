@@ -43,12 +43,24 @@
 
 <div class="menu-container">
     <div class="menu-content">
-        <a href="Projekti.html" class="menu-item">Home</a>
+        <a href="Projekti.php" class="menu-item">Home</a>
         <a href="Historiku.html" class="menu-item">Historiku</a>
         <a href="Galeria.html" class="menu-item">Galeria</a>
         <a href="Tickets.html" class="menu-item">Tickets</a>
-        <a href="login.html" class="menu-item">Log In</a>
-        <a href="dashboard.php" class="menu-item">Dashboard</a>
+        <?php
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+            echo '<a href="login.php" class="menu-item">Log Out</a>';
+
+          
+            if ($_SESSION['is_admin']) {
+                echo '<a href="dashboard.php" class="menu-item">Dashboard</a>';
+            }
+        } else {
+            
+            echo '<a href="login.php" class="menu-item">Log In</a>';
+        }
+        ?>
+        
         
         <div class="cls-button">
             <a href="#" onclick="toggleMenu()" class="menu-item1">X</a>
@@ -59,8 +71,8 @@
 <script>
   function validateForm() {
       var username = document.getElementById('username').value;
-      var password = document.getElementById('password').value;
-      var confirmPassword = document.getElementById('confirmPassword').value;
+      var password = document.getElementById('password_1').value;
+      var confirmPassword = document.getElementById('password_2').value;
       var email = document.getElementById('email').value;
 
       var usernameRegex = /^[a-zA-Z0-9]{8,15}$/;
@@ -95,6 +107,8 @@
         menu.style.right = menu.style.right === '0px' ? '-500px' : '0px';
     }
 </script>
+
+
 
 <footer>
         <div class="footer-content">

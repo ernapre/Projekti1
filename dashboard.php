@@ -1,74 +1,44 @@
+<?php 
+  session_start(); 
+
+  
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: projekti.php");
+    exit();
+  }
+
+  $inactive_timeout = 3000; 
+
+  
+  if (isset($_SESSION['username'])) {
+    
+    if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $inactive_timeout)) {
+      session_unset();
+      session_destroy();
+      $_SESSION['timeout_msg'] = "Your session has timed out. Please log in again.";
+      header('location: login.php');
+      exit();
+    }
+
+    
+    $_SESSION['last_activity'] = time();
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    nav {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .navbar-btn {
-      text-decoration: none;
-      padding: 5px 10px;
-      border: 1px solid #fff;
-      background-color: #28a745;
-      color: #fff;
-      border-radius: 5px;
-    }
-
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #333;
-      color: #fff;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: 5px 10px;
-      border: 1px solid #333;
-      background-color: #fff;
-      color: #333;
-      border-radius: 5px;
-      margin-right: 5px;
-    }
-
-    .btn-success {
-      background-color: #28a745;
-      color: #fff;
-    }
-
-    .btn-danger {
-      background-color: #dc3545;
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
   <nav>
-    <h2>AdminDashboard</h2>
+    <h2>Dashboard</h2>
     <a class="navbar-btn" href="create.php">Add New Member</a>
   </nav>
 
@@ -78,7 +48,6 @@
         <th>ID</th>
         <th>Username</th>
         <th>Email</th>
-        <th>Usertype</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -96,7 +65,6 @@
         <td>$row[id]</td>
         <td>$row[username]</td>
         <td>$row[email]</td>
-        <td>$row[usertype]</td>
         <td>
             <a class='btn btn-success' href='edit.php?id=$row[id]'>Edit</a>
             <a class='btn btn-danger' href='delete.php?id=$row[id]'>Delete</a>
@@ -107,6 +75,89 @@
         ?>
     </tbody>
   </table>
+
+  <div id="content">
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="Btn.png" alt="Menu Button">
+        </button>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-content">
+
+            <a href="Projekti.php" class="menu-item">Home</a>
+            <a href="Historiku.php" class="menu-item">Historiku</a>
+            <a href="Galeria.php" class="menu-item">Galeria</a>
+            <?php
+         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+          echo '<a href="Projekti.php?logout=1" class="menu-item">Log Out</a>';
+          echo '<a href="Tickets.php" class="menu-item">Tickets</a>';
+
+            if ($_SESSION['is_admin']) {
+                echo '<a href="dashboard.php" class="menu-item">Dashboard</a>';
+            }
+         } else {
+            echo '<a href="login.php" class="menu-item">Log In</a>';
+            echo '<a href="JoTicket.php" class="menu-item">Tickets</a>';
+         }
+         ?>
+            
+
+            <div class="cls-button">
+                <a href="#" onclick="toggleMenu()" class="menu-item1">X</a>
+            </div>
+                <div class="content1">
+                    
+                    <?php if (isset($_SESSION['success'])) : ?>
+                    <div class="error success" >
+                        <h3>
+                        <?php 
+                            echo $_SESSION['success']; 
+                            unset($_SESSION['success']);
+                        ?>
+                        </h3>
+                    </div>
+                    <?php endif ?>
+
+                
+                    <?php  if (isset($_SESSION['username'])) : ?>
+                      <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 300;">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+                    <?php endif ?>
+
+                    <?php if (isset($_SESSION['timeout_msg'])) : ?>
+                            <div class="error">
+                                <p><?php echo $_SESSION['timeout_msg']; unset($_SESSION['timeout_msg']); ?></p>
+                            </div>
+                        <?php endif ?>
+
+                </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu-container');
+            menu.style.right = menu.style.right === '0px' ? '-500px' : '0px';
+        }
+    </script>
+
+    
+<footer>
+        <div class="footer-content">
+            <h3>MUZIKA ROCK NE MITROVICE</h3>
+            <img src="guitar.png" alt="" class="guitar">
+            <p>Zhytuni ne boten e Muzikes Rock ne Kosove nepermjet webfaqes tone...</p>
+            <p>Socials:</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><img src="facebook.png" alt="" class="socials-image"></a></li>
+                <li><a href="https://twitter.com/"><img src="twitter.png" alt="" class="socials-image"></a></li>
+                <li><a href="https://www.linkedin.com/"><img src="linkedin.png" alt="" class="socials-image"></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2023 designed by <span>Erna Prekazi, Ermal Sadiku</span></p>
+        </div>
+    </footer>
 
 </body>
 </html>

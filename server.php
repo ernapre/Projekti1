@@ -48,6 +48,14 @@ if (isset($_POST['reg_user'])) {
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
+    $_SESSION['logged_in'] = true;
+
+    if ($user_type == 'admin') {
+        $_SESSION['is_admin'] = true;
+    } else {
+        $_SESSION['is_admin'] = false;
+    }
+
   	$_SESSION['success'] = "You are now logged in";
   	header('location: Projekti.php');
   }
@@ -70,7 +78,16 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
+  	    $user = mysqli_fetch_assoc($results);
+        $_SESSION['username'] = $username;
+        $_SESSION['logged_in'] = true;
+        
+        if ($user['usertype'] == 'admin') {
+            $_SESSION['is_admin'] = true;
+        } else {
+            $_SESSION['is_admin'] = false;
+        }
+
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: Projekti.php');
   	}else {
